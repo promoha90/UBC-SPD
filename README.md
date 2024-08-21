@@ -35,14 +35,14 @@ In this repository, you will find:
 
 **COMPLETION OF ALL COURSE MATERIALS:**  
 
-I programmed this [script](count_mins_of_problem-bank.py) with python to add together all the exercises estimated time in [Problem-Bank.pdf]("Problem-Bank.pdf"), we have 194 extra exercises and the script returned 3586 minutes.
+I programmed this [script](count.py) with python to add together all the exercises estimated time in [Problem-Bank.pdf]("Problem-Bank.pdf"), we have 194 extra exercises and the script returned 3586 minutes.
 
 - **Math:**
   ```
-  3586 / 194 = 18.48
-  194 * 0.30 = 58.20 hours
-  104 + 58.2 = 162.2 hours
-  130 + 58.2 = 188.2 hours
+  3586 / 194 = 18.48 minutes per exercise
+  194 * 0.30 = 58.20 hours for all exercises
+  104 + 58.2 = 162.2 hours for all exercises + minimum staff's estimated time
+  130 + 58.2 = 188.2 hours for all exercises + maximum staff's estimated time
   ```
 
 - **TOTAL:** **162.2-188.2 hours**
