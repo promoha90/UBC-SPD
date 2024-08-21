@@ -1,0 +1,27 @@
+
+;; area-starter.rkt
+
+; 
+; PROBLEM:
+; 
+; DESIGN a function called area that consumes the length of one side 
+; of a square and produces the area of the square.
+; 
+; Remember, when we say DESIGN, we mean follow the recipe.
+; 
+; Leave behind commented out versions of the stub and template.
+; 
+
+
+;; Natural -> Natural <- (An square's length cannot be negative)
+;; Produces the area of a square given its length.
+(check-expect (area 7) (* 7 7))
+(check-expect (area -1) (* -1 -1))
+
+; (define (area length) 0)  ; stub
+
+#| (define (area length)    ; template
+     (... length))|#
+
+(define (area length)
+  (* length length))

@@ -1,0 +1,30 @@
+
+;; cflag-starter.rkt
+
+; 
+; PROBLEM:
+; 
+; The background for the Canadian Flag (without the maple leaf) is this:
+;          .
+;          
+; Write an expression to produce that background. (If you want to get the
+; details right, officially the overall flag has proportions 1:2, and the 
+; band widths are in the ratio 1:2:1.)
+; 
+; ;  THIS IS TO CHECK BOTH THE LENGTH AND THE HEIGTH OF THE IMAGE
+; ; (if (= (image-width .) 80)
+; ;     "YES"
+; ;     "HELL NAH")
+; ; (if (= (image-heigth .) 40)
+; ;     "YES"
+; ;     "HELL NAH")
+; 
+; 
+
+(require 2htdp/image)
+
+(define (rectanglemaker width height color)
+  (rectangle width height "solid" color))
+
+(beside (rectanglemaker 20 40 "red") (rectanglemaker 40 40 "white") (rectanglemaker 20 40 "red"))
+

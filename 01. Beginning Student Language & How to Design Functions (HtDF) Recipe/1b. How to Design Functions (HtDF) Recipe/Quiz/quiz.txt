@@ -1,0 +1,36 @@
+(require 2htdp/image)
+; PROBLEM:
+; 
+; Design a function that consumes two images and produces true if the first is larger than the second.
+; Note that limitations of the edX assessment tool mean that you cannot use images directly in your .rkt file.
+; You can of course use image primitives like rectangle. But you cannot paste actual images into your .rkt file for this quiz,
+; even though you normally can do that in BSL. Furthermore, unfortunately the assessment tool does not preserve the indentation of your code.
+; When it comes time for the self-assessment, you can assess your original .rkt file, or copy your submission back into DrRacket and press cmd/ctr-I.
+
+;; Image -> Boolean
+;; Produces true if the first image is large than the second image (both height and width).
+;; Test cases
+(check-expect (larger? (rectangle 11 50 "solid" "yellow") (rectangle 10 33 "solid" "yellow")) true)   ; The first image is larger in both height and width than the second image
+(check-expect (larger? (rectangle 20 50 "solid" "yellow") (rectangle 20 53 "solid" "yellow")) false)  ; The first image is taller but not wider than the second image
+(check-expect (larger? (rectangle 20 30 "solid" "yellow") (rectangle 10 40 "solid" "yellow")) false)  ; The first image is larger in width but not in height compared to the second image
+
+(check-expect (larger? (rectangle 10 14 "solid" "yellow") (rectangle 11 20 "solid" "yellow")) false)  ; The second image is larger in both height and width compared to the first image
+(check-expect (larger? (rectangle 12 10 "solid" "yellow") (rectangle 20 11 "solid" "yellow")) false)  ; The second image is larger in height but not in width compared to the first image
+(check-expect (larger? (rectangle 11 10 "solid" "yellow") (rectangle 20 11 "solid" "yellow")) false)  ; The second image is larger in both height and width compared to the first image
+
+(check-expect (larger? (rectangle 10 20 "solid" "yellow") (rectangle 11 20 "solid" "yellow")) false)  ; The second image is larger in width but has the same height as the first image
+(check-expect (larger? (rectangle 20 10 "solid" "yellow") (rectangle 20 11 "solid" "yellow")) false)  ; The second image is larger in height but has the same width as the first image
+
+(check-expect (larger? (rectangle 20 10 "solid" "yellow") (rectangle 20 10 "solid" "yellow")) false)  ; Both images are equal in both height and width
+
+;; Additional test cases
+(check-expect (larger? (rectangle 0 0 "solid" "yellow") (rectangle 10 10 "solid" "yellow")) false)    ; First image is zero-sized
+(check-expect (larger? (rectangle 10 10 "solid" "yellow") (rectangle 0 0 "solid" "yellow")) true)     ; Second image is zero-sized
+
+; (define (larger? img1 img2) false)  ; stub
+
+#| (define (larger? img1 img2)        ; template
+     (... img1 img2)|#
+
+(define (larger? img1 img2)
+  (and (> (image-width img1) (image-width img2)) (> (image-height img1) (image-height img2))))

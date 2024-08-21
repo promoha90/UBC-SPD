@@ -1,0 +1,45 @@
+
+;; best-starter.rkt
+
+; 
+; PROBLEM:
+; 
+; Using the CityName data definition below design a function
+; that produces true if the given city is the best in the world. 
+; (You are free to decide for yourself which is the best city 
+; in the world.)
+; 
+
+
+;; Data definitions:
+
+
+;; CityName is String
+;; interp. the name of a city
+(define CN1 "Boston")
+(define CN2 "Gaza")
+
+#;
+(define (fn-for-city-name cn)
+  (... cn))
+
+;; Template rules used:              For the first part of the course
+;;   atomic non-distinct: String     we want you to list the template
+;;                                   rules used after each template.
+;;
+
+;; Functions: (Here we use the HtDF formula)
+
+;; CityName -> Boolean
+;; produce true if the given city is Gaza.
+(check-expect (best_city? CN1) false)
+(check-expect (best_city? CN2) true)
+
+
+;; (define (best_city? cn) false)  ; stub
+
+#; (define (best_city? cn)         ; template
+     (... cn))
+
+(define (best_city? cn)
+  (string=? cn "Gaza"))

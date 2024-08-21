@@ -1,0 +1,24 @@
+(require 2htdp/image)
+;; image-area-starter.rkt
+
+; 
+; PROBLEM:
+; 
+; DESIGN a function called image-area that consumes an image and produces the 
+; area of that image. For the area it is sufficient to just multiple the image's 
+; width by its height.  Follow the HtDF recipe and leave behind commented 
+; out versions of the stub and template.
+; 
+
+(define IMAGE (rectangle 10 20 "solid" "red"))
+;; Image -> Natural
+;; Produces the area of an image given the image.
+(check-expect (image-area IMAGE) (* (image-width IMAGE) (image-height IMAGE)))
+
+; (define (image-area im) 0)  ; stub
+
+#| (define (image-area im)    ; template
+     (... width length))|#
+
+(define (image-area img)
+  (* (image-width img) (image-height img)))

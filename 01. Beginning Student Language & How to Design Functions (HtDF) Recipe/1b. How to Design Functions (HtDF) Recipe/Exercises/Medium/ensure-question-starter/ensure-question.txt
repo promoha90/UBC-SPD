@@ -1,0 +1,29 @@
+
+;; ensure-question-starter.rkt
+
+; 
+; PROBLEM:
+; 
+; Use the How to Design Functions (HtDF) recipe to design a function that consumes a string, and adds "?" 
+; to the end unless the string already ends in "?".
+; 
+; For this question, assume the string has length > 0. Follow the HtDF recipe and leave behind commented 
+; out versions of the stub and template.
+; 
+
+;; String -> String
+;; Produces the given string adding a question mark to the end if not already at the END of the string.
+;; Test cases
+(check-expect (question "I have a Casio") "I have a Casio?")
+(check-expect (question "Do you have a Casio?") "Do you have a Casio?")
+(check-expect (question "Can you give me some? Thank you!") "Can you give me some? Thank you!?")
+
+; (define (question s) "")  ; stub
+
+#| (define (question s)     ; template
+     (... s)|#
+
+(define (question s)
+  (if (string=? (substring s (- (string-length s) 1)) "?")
+      s
+      (string-append s "?")))

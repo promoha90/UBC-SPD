@@ -1,0 +1,18 @@
+; Problem: Design a function that pluralizes a given word.(Pluralize means to convert the word to
+; its plural form.) For simplicity you may assume that just adding s is enough to pluralize a word.
+
+
+;; String -> String
+
+;; Produces a given word with an "s" added to the end.
+
+(check-expect (pluralize "Cat") "Cats")
+(check-expect (pluralize "Tortoise") "Tortoises")
+
+; (define (pluralize s) " ") ; stub
+
+#|(define (pluralize s)
+    (... s))|#
+
+(define (pluralize s)
+  (string-append s "s"))

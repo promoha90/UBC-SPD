@@ -1,0 +1,17 @@
+
+;; function-writing-starter.rkt
+
+; 
+; PROBLEM:
+; Write a function that consumes two numbers and produces the larger of the two.
+; 
+
+
+(define (maximum n1 n2)
+  (if (> n1 n2)
+      n1
+      (if (< n1 n2)
+          n2
+          (string-append "ERROR: " (number->string n1) " AND " (number->string n2) " ARE THE SAME NUMBERS"))))
+
+(maximum 8 8)
